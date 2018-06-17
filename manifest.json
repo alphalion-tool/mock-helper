@@ -1,0 +1,45 @@
+{
+  "name": "Mock Helper",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "helper for mock server",
+  "icons" : {           // 扩展的icon
+    "16" : "icon.png",
+    "48" : "icon.png",
+    "128" : "icon.png"
+  },
+  "browser_action": {   // browser_action表示程序图标会出现在地址栏右侧，若要出现在地址栏，则写成page_action
+    "default_title": "日报工具",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [  //content_scripts是在Web页面内运行的javascript脚本。
+                        //通过使用标准的DOM，它们可以获取浏览器所访问页面的详细信息，并可以修改这些信息。
+    {                   //这里的值是数组，可以针对多个站点进行不同的操作配置
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "custom.css"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "permissions": [   //一些权限的配置，
+      "contextMenus", // 右键菜单
+      "tabs", // 标签
+      "notifications", // 通知
+      "webRequest", // web请求
+      "webRequestBlocking",
+      "<all_urls>",
+      "proxy",
+      "storage", // 插件本地存储
+      "http://*/*", // 可以通过executeScript或者insertCSS访问的网站
+      "https://*/*", // 可以通过executeScript或者insertCSS访问的网站
+      "cookies"       //比如cookie权限，比如系统通知权限，类似于notify这样的东西，在window系统上未右下角的小气泡
+  ]
+}

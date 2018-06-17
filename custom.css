@@ -1,0 +1,40 @@
+
+
+.mock-helper {
+    width: 400px;
+    height: 400px;
+}
+
+/* swagger */
+
+.swagger-url-input, .mock-url-input, .local-url-input {
+    width: 80%;
+}
+
+
+.swagger-urls span {
+    display: inline-block;
+}
+
+.swagger-url-item {
+    height: 25px;
+    border-bottom: 1px dotted #ccc;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+.swagger-url-method {
+    width: 70px;
+    text-transform: uppercase;
+}
+
+.swagger-url-status {
+    width: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+.swagger-url-item--proxy-yes {
+    background-color: #58ff58;
+}
