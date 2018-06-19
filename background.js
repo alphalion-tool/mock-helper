@@ -5,6 +5,7 @@ var mocked = {},
 
 function localLoad () {
     chrome.storage.local.get({ mocked: {}, localUrl: '', mockUrl: '' }, function(items) {
+        console.log('storage loaded', items);
         if (items.mocked) mocked = items.mocked;
         localUrl = items.localUrl;
         mockUrl = items.mockUrl;
@@ -14,6 +15,7 @@ function localLoad () {
 localLoad();
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
+    console.log('storage changed');
     localLoad();
 });
 
@@ -22,7 +24,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
     if (!localUrl || !mockUrl) return;
     if (!details.url.startsWith(localUrl)) return;
     const method = details.method.toLowerCase();
-    const path = details.url.replace(localUrl, '');
+    const path = details.url.replace(localUrl, '').split('?')[0];
     const key = method + '-' + path;
     let otherKey = key;
     if (path.match(/\/[\d]+/)) {
