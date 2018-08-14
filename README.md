@@ -10,16 +10,16 @@ use `chrome.webRequest` change the requests headers, add a header named `__MOCK_
 
 - for local file system (数据来源本地文件)
     
-    add three headers
-    __MOCK__DATAFROM__='filesystem'
-    __MOCK__FILENAME__='xx.json'
-    __MOCK__FILEROOT__='/xcsdf/sdfsdf'
+        add three headers
+        __MOCK__DATAFROM__='filesystem'
+        __MOCK__FILENAME__='xx.json'
+        __MOCK__FILEROOT__='/xcsdf/sdfsdf'
 
 - for mock server (数据来源mock server)
     
-    add two headers
-    __MOCK__DATAFROM__='mockserver'
-    __MOCK__SERVER__='http://xxx' 
+        add two headers
+        __MOCK__DATAFROM__='mockserver'
+        __MOCK__SERVER__='http://xxx' 
 
 
 
