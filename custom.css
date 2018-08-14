@@ -1,7 +1,7 @@
 
 
 .mock-helper {
-    width: 400px;
+    width: 600px;
     height: 400px;
 }
 
@@ -29,9 +29,18 @@
 }
 
 .swagger-url-status {
-    width: 40px;
+    width: 50px;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.swagger-url-file {
+    float: right;
+    width: 210px;
+}
+
+.swagger-url-file > input {
+    width: 95%;
 }
 
 

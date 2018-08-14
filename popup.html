@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <title>Mock Helper</title>
     <link rel="stylesheet" type="text/css" href="custom.css">
+    <script src="jquery.min.js"></script>
     <script src="custom.js"></script>
   </head>
   <body class="mock-helper">
     <h2>Mock Helper</h2>
-    <p>Swagger Path: <input class="swagger-url-input" /><button class="swagger-reload">Reload</button></p>
-    <p>Mock Server:<input class="mock-url-input" /></p>
-    <p>Local Server: <input class="local-url-input" /></p>
-    <p>Filter Path: <input class="filter-url-input" /><button class="clear-filter">Clear</button></p>
+    <p>Swagger Path: <input class="swagger-url-input" placeholder="Swagger地址，如http://xx.xx.com/api-docs" /><button class="swagger-reload">Load/Reload</button></p>
+    <p>Local Server: <input class="local-url-input" placeholder="需要监听的地址，如http://localhost:8081" /></p>
+    <p>Data From: <label><input class="datafrom-file" type="radio" value="filesystem" name="datafrom" />File System</label><label><input class="datafrom-server" type="radio" value="mockserver" name="datafrom" />Mock Server</label></p>
+    <p><span class="file-or-server-label">Mock Server:</span><input class="mock-url-input" /></p>
+    <p>Filter Path: <input class="filter-url-input" placeholder="filter path quickly" /><button class="clear-filter">Clear</button></p>
     <div class="swagger-wrapper"></div>
   </body>
 </html>
